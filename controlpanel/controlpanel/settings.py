@@ -115,7 +115,7 @@ AUTH_ADFS = {
     'AUDIENCE': os.getenv('CONTROL_PANEL_CLIENT_ID'),
     'ISSUER': 'https://sts.windows.net/f932e096-94f5-4f3d-902d-a68125e0fc1b/',
     'CA_BUNDLE': False,
-    'CLAIM_MAPPING': {
+    'CLAIM_MAPPING': {  #? here is where you specify what fields are retrieved
         'first_name': 'given_name',
         'last_name': 'family_name',
         'email': 'email',
@@ -147,6 +147,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'pxcp', 'static')]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
