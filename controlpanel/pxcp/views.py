@@ -1,5 +1,7 @@
 from django.shortcuts import render
+from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
+from .models import Item
 
 @login_required
 def home(request):
@@ -30,3 +32,13 @@ def search(request):
     query = request.GET.get('q')
     # Implement your search logic here
     return render(request, 'search_results.html', {'query': query})
+
+@login_required
+def incremental_search(request):
+    query = request.GET.get('q', '')
+    # Implement your search logic here
+    # For example, search in a model called 'Item'
+    results = []
+    if query:
+        results = list(Item.objects.filter(name__icontains=query).values('name', 'description'))
+    return JsonResponse({'results': results})
