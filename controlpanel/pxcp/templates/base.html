@@ -12,10 +12,11 @@
           <ul class="nav-items">
             <li><a href="{% url 'home' %}"><i class="fas fa-house"></i> Home</a></li>
           </ul>
-            <form action="{% url 'search' %}" method="get" class="search-form">
+            <form action="{% url 'incremental_search' %}" method="get" class="search-form">
               <input type="text" name="q" placeholder="Search..." id="search-input">
               <button type="submit">Search</button>
             </form>
+            <ul id="search-results"></ul>
             <ul class="nav-items">
               <li><a href="{% url 'about' %}"><i class="fas fa-circle-info"></i> About</a></li>
               <li><a href="{% url 'contact' %}"><i class="fas fa-circle-question"></i> Contact</a></li>
@@ -40,7 +41,8 @@
           {% endblock %}
       </main>
     </div>
-    <script>
+    <script src="{% static 'js/script.js' %}"></script>
+    <!-- <script>
       document.addEventListener('DOMContentLoaded', function() {
           const searchInput = document.getElementById('search-input');
           searchInput.addEventListener('input', function() {
@@ -56,6 +58,6 @@
               }
           });
       });
-  </script>
+  </script> -->
 </body>
 </html>

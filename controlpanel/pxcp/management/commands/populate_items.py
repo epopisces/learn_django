@@ -7,9 +7,9 @@ class Command(BaseCommand):
 
     def handle(self, *args, **kwargs):
         items = [
-            {'name': 'Verisimilitude', 'description': 'the appearance of being true or real.'},
-            {'name': 'Highfalutin', 'description': 'pompous or pretentious'},
-            {'name': 'Highborn', 'description': 'having noble parents'},
+            {'name': 'Verisimilitude', 'description': 'the appearance of being true or real.', 'link': '/'},
+            {'name': 'Highfalutin', 'description': 'pompous or pretentious', 'link': '/'},
+            {'name': 'Highborn', 'description': 'having noble parents', 'link': '/admin_dashboard/'},
             # Add more items as needed
         ]
         for item in items:

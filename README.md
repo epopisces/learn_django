@@ -7,6 +7,12 @@ pip install -r requirements.txt
 python manage.py runserver localhost:8000
 ```
 
+# Create a new migration
+python manage.py makemigrations
+
+# Apply the migration to update the database schema
+python manage.py migrate
+
 # Goals
 
 [x] Get Groups perm & display
